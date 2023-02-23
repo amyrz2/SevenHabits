@@ -23,6 +23,24 @@ namespace SevenHabits.Controllers
             return View();
         }
 
+        public IActionResult ViewTasks()
+        {
+            return View();
+        }
+
+
+        [HttpGet]
+        public IActionResult AddTask()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddTask(ApplicationException ar)
+        {
+            return View("Confirmation", ar);
+        }
+
         public IActionResult Privacy()
         {
             return View();

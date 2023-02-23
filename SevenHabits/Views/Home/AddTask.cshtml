@@ -1,9 +1,36 @@
-﻿@{
+@{
     ViewData["Title"] = "Add Task";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@*@model Mission07.Models. ;*@
+
+<h1>@ViewData["Title"]</h1>
+<br />
+<form method="post">
+
+    <div asp-validation-summary="All"></div>
+
+    <label>Task</label>
+    <input type="text" id="Task" asp-for="Task" />
+    <br />
+    <label>Due Date</label>
+    <input type="date" id="DueDate" asp-for="DueDate" />
+    <br />
+    <label>Quadrant</label>
+    <input type="text" id="Quadrant" asp-for="Quadrant" />
+    <br />
+    <label>Category</label>
+    <select id="Category" asp-for="Category">
+        <option value="Home">Home</option>
+        <option value="School">School</option>
+        <option value="Work">Work</option>
+        <option value="Church">Church</option>
+    </select>
+    <br />
+    <label>Completed</label>
+    <select id="Completed" asp-for="Completed">
+        <option value=true>Yes</option>
+        <option value=false>No</option>
+    </select>
+</form>
 

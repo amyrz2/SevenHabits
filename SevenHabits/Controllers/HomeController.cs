@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SevenHabits.Models;
+using SevenHabits.Controllers;
 
 namespace SevenHabits.Controllers
 {
     public class HomeController : Controller
     {
+        private ContextClass blahContext { get; set; }
+
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -25,13 +29,19 @@ namespace SevenHabits.Controllers
 
         public IActionResult ViewTasks()
         {
-            return View();
+            var applications = blahContext.Responses
+            .Include(x => x.Category)
+            .ToList();
+
+            return View(applications);
         }
 
 
         [HttpGet]
         public IActionResult AddTask()
         {
+            ViewBag.Cats = blahContext.Categories.ToList();
+
             return View();
         }
 

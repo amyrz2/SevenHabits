@@ -24,6 +24,11 @@ namespace SevenHabits
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<Context>(options =>
+            {
+                options.UseSqlite(configuration["ConnectionStrings:BlahConnection"]);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

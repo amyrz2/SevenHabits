@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/amyzhang/Projects/SevenHabits/SevenHabits/SevenHabits.csproj": {}
+    "/Users/joshuaminer/Projects/SevenHabits/SevenHabits/SevenHabits.csproj": {}
   },
   "projects": {
-    "/Users/amyzhang/Projects/SevenHabits/SevenHabits/SevenHabits.csproj": {
+    "/Users/joshuaminer/Projects/SevenHabits/SevenHabits/SevenHabits.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/amyzhang/Projects/SevenHabits/SevenHabits/SevenHabits.csproj",
+        "projectUniqueName": "/Users/joshuaminer/Projects/SevenHabits/SevenHabits/SevenHabits.csproj",
         "projectName": "SevenHabits",
-        "projectPath": "/Users/amyzhang/Projects/SevenHabits/SevenHabits/SevenHabits.csproj",
-        "packagesPath": "/Users/amyzhang/.nuget/packages/",
-        "outputPath": "/Users/amyzhang/Projects/SevenHabits/SevenHabits/obj/",
+        "projectPath": "/Users/joshuaminer/Projects/SevenHabits/SevenHabits/SevenHabits.csproj",
+        "packagesPath": "/Users/joshuaminer/.nuget/packages/",
+        "outputPath": "/Users/joshuaminer/Projects/SevenHabits/SevenHabits/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/amyzhang/.nuget/NuGet/NuGet.Config"
+          "/Users/joshuaminer/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -37,6 +37,28 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.32, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -48,6 +70,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[3.1.32, 3.1.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -56,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.405/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
         }
       }
     }

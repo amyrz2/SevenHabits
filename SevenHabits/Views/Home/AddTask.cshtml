@@ -2,7 +2,7 @@
     ViewData["Title"] = "Add Task";
 }
 
-@*@model Mission07.Models. ;*@
+@model SevenHabits.Models.TaskForm
 
 <h1>@ViewData["Title"]</h1>
 <br />
@@ -19,12 +19,13 @@
     <label>Quadrant</label>
     <input type="text" id="Quadrant" asp-for="Quadrant" />
     <br />
-    <label>Category</label>
-    <select id="Category" asp-for="Category">
-        <option value="Home">Home</option>
-        <option value="School">School</option>
-        <option value="Work">Work</option>
-        <option value="Church">Church</option>
+    <label>Category: </label>
+    <select asp-for="CategoryID">
+        <option value="">--Select a Category--</option>
+        @foreach (Category c in ViewBag.Cats)
+        {
+            <option value=@c.CategoryID>@c.CategoryName</option>
+        }
     </select>
     <br />
     <label>Completed</label>

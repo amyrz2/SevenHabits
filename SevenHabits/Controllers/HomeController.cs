@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SevenHabits.Models;
 using SevenHabits.Controllers;
+using Microsoft.EntityFrameworkCore;
 
 namespace SevenHabits.Controllers
 {
@@ -14,13 +15,17 @@ namespace SevenHabits.Controllers
     {
         private ContextClass blahContext { get; set; }
 
-
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ContextClass someName)
         {
-            _logger = logger;
+            blahContext = someName;
         }
+
+        //private readonly ILogger<HomeController> _logger;
+
+        //public HomeController(ILogger<HomeController> logger)
+        //{
+        //    _logger = logger;
+        //}
 
         public IActionResult Index()
         {
@@ -29,7 +34,7 @@ namespace SevenHabits.Controllers
 
         public IActionResult ViewTasks()
         {
-            var applications = blahContext.Responses
+            var applications = blahContext.habits
             .Include(x => x.Category)
             .ToList();
 

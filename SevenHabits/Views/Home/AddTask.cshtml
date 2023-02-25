@@ -17,7 +17,12 @@
     <input type="date" id="DueDate" asp-for="DueDate" />
     <br />
     <label>Quadrant</label>
-    <input type="text" id="Quadrant" asp-for="Quadrant" />
+    <select id="Quadrant" asp-for="Quadrant">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+    </select>
     <br />
     <label>Category: </label>
     <select asp-for="CategoryID">

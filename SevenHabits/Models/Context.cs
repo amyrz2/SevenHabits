@@ -1,17 +1,17 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore;
 namespace SevenHabits.Models
 {
-    public class Context : DbContext
+    public class ContextClass : DbContext
     {
         //Constructor
-        public Context (DbContextOptions<Context> options) : base(options)
+        public ContextClass (DbContextOptions<ContextClass> options) : base(options)
         {
             //Leave blank for now
         }
 
 
-        public DbSet<TaskClass> habits { get; set; }
+        public DbSet<TaskForm> habits { get; set; }
 
         public DbSet<Category> Categories { get; set; }
 

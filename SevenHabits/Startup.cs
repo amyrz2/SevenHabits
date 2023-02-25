@@ -1,13 +1,15 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SevenHabits.Models;
 
 namespace SevenHabits
 {
@@ -25,9 +27,9 @@ namespace SevenHabits
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<Context>(options =>
+            services.AddDbContext<ContextClass>(options =>
             {
-                options.UseSqlite(configuration["ConnectionStrings:BlahConnection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:BlahConnection"]);
             });
         }
 

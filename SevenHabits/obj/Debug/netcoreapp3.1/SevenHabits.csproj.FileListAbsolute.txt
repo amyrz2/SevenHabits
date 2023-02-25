@@ -36,3 +36,13 @@
 /Users/amyzhang/Projects/SevenHabits/SevenHabits/obj/Debug/netcoreapp3.1/SevenHabits.pdb
 /Users/amyzhang/Projects/SevenHabits/SevenHabits/obj/Debug/netcoreapp3.1/SevenHabits.genruntimeconfig.cache
 /Users/amyzhang/Projects/SevenHabits/SevenHabits/obj/Debug/netcoreapp3.1/SevenHabits.csproj.CopyComplete
+C:\Users\derek\Source\Repos\SevenHabits\SevenHabits\obj\Debug\netcoreapp3.1\SevenHabits.csproj.AssemblyReference.cache
+C:\Users\derek\Source\Repos\SevenHabits\SevenHabits\obj\Debug\netcoreapp3.1\SevenHabits.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\derek\Source\Repos\SevenHabits\SevenHabits\obj\Debug\netcoreapp3.1\SevenHabits.AssemblyInfoInputs.cache
+C:\Users\derek\Source\Repos\SevenHabits\SevenHabits\obj\Debug\netcoreapp3.1\SevenHabits.AssemblyInfo.cs
+C:\Users\derek\Source\Repos\SevenHabits\SevenHabits\obj\Debug\netcoreapp3.1\SevenHabits.csproj.CoreCompileInputs.cache
+C:\Users\derek\Source\Repos\SevenHabits\SevenHabits\obj\Debug\netcoreapp3.1\SevenHabits.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\derek\Source\Repos\SevenHabits\SevenHabits\obj\Debug\netcoreapp3.1\SevenHabits.RazorAssemblyInfo.cache
+C:\Users\derek\Source\Repos\SevenHabits\SevenHabits\obj\Debug\netcoreapp3.1\SevenHabits.RazorAssemblyInfo.cs
+C:\Users\derek\Source\Repos\SevenHabits\SevenHabits\obj\Debug\netcoreapp3.1\SevenHabits.dll
+C:\Users\derek\Source\Repos\SevenHabits\SevenHabits\obj\Debug\netcoreapp3.1\SevenHabits.pdb

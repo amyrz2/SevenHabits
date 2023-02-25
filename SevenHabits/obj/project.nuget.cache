@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FdxNp/dFVMI6VYP2BrbgMgiKkIlOVxjHEfCzH1UJ/1R5DEdOfOL86EIJ23LmWZC5zE8IvFhO1jzSiHFFA4AW0w==",
+  "dgSpecHash": "FQ8dLkbR3o7eA+1HVN+QGaqNoHHu3sANRW/Ld4pyg2dE3Y225dQqj0gX0QJDjHhH8QhuA0lcZsndDPTQAzAYcg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\derek\\Source\\Repos\\SevenHabits\\SevenHabits\\SevenHabits.csproj",
+  "projectFilePath": "C:\\Users\\derek\\source\\repos\\SevenHabits\\SevenHabits\\SevenHabits.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\derek\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\derek\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",

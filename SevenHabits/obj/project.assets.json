@@ -1379,11 +1379,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\derek\\Source\\Repos\\SevenHabits\\SevenHabits\\SevenHabits.csproj",
+      "projectUniqueName": "C:\\Users\\derek\\source\\repos\\SevenHabits\\SevenHabits\\SevenHabits.csproj",
       "projectName": "SevenHabits",
-      "projectPath": "C:\\Users\\derek\\Source\\Repos\\SevenHabits\\SevenHabits\\SevenHabits.csproj",
+      "projectPath": "C:\\Users\\derek\\source\\repos\\SevenHabits\\SevenHabits\\SevenHabits.csproj",
       "packagesPath": "C:\\Users\\derek\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\derek\\Source\\Repos\\SevenHabits\\SevenHabits\\obj\\",
+      "outputPath": "C:\\Users\\derek\\source\\repos\\SevenHabits\\SevenHabits\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\derek\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1452,7 +1452,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

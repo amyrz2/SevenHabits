@@ -27,10 +27,10 @@ namespace SevenHabits.Migrations
                     TaskID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Task = table.Column<string>(nullable: false),
-                    DueDate = table.Column<DateTime>(nullable: false),
+                    DueDate = table.Column<DateTime>(nullable: true),
                     Quadrant = table.Column<int>(nullable: false),
                     Completed = table.Column<bool>(nullable: false),
-                    CategoryID = table.Column<int>(nullable: false)
+                    CategoryID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -40,7 +40,7 @@ namespace SevenHabits.Migrations
                         column: x => x.CategoryID,
                         principalTable: "Categories",
                         principalColumn: "CategoryID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.InsertData(

@@ -6,9 +6,26 @@
 
 <h1>@ViewData["Title"]</h1>
 
+@*Column Heading*@
 <div class="row">
     <div class="col-sm-3">
-        <h3>Quadrant I: Important / Urgent</h3>
+    </div>
+    <div class="col-sm-3">
+        <h2>Urgent</h2>
+    </div>
+    <div class="col-sm-3">
+        <h2>Not Urgent</h2>
+    </div>
+</div>
+
+@*Row 1 with Q1 and Q1 tasks*@
+<div class="row">
+    <div class="col-sm-3">
+        <h2>Important</h2>
+    </div>
+    <div class="col-sm-3">
+        <h3>Quadrant I:</h3>
+        <h5> Important / Urgent</h5>
         <hr />
         @foreach (var task in Model)
         {
@@ -17,14 +34,19 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">@task.Task</h5>
-                        <p class="card-text">Category: @task.Category.CategoryName</p>
-                        <p class="card-text">Due Date: @task.DueDate</p> @*.ToShortDateString()*@
+                        @if (task.Category != null)
+                        {
+                            <p class="card-text">Category: @task.Category.CategoryName</p>
+                        }
+                        @if (task.DueDate != null)
+                        {
+                            <p class="card-text">Due Date: @task.DueDate?.ToShortDateString()</p>
+
+                        }
                         <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@task.TaskID" class="btn btn-primary">Edit</a>
-                        <form asp-action="Delete" asp-controller="Home" asp-route-taskid="@task.TaskID" class="d-inline">
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
+                        <a asp-action="Delete" asp-controller="Home" asp-route-taskid="@task.TaskID" class="btn btn-danger">Delete</a>
                         <form asp-action="MarkComplete" asp-controller="Home" asp-route-taskid="@task.TaskID" class="d-inline">
-                            @*<button type="submit" class="btn btn-success">Mark Complete</button>*@
+                            <button type="submit" class="btn btn-success">Mark Complete</button>
                         </form>
                     </div>
                 </div>
@@ -33,7 +55,8 @@
     </div>
 
     <div class="col-sm-3">
-        <h3>Quadrant II: Important / Not Urgent</h3>
+        <h3>Quadrant II:</h3>
+        <h5>Important / Not Urgent</h5>
         <hr />
         @foreach (var task in Model)
         {
@@ -42,24 +65,35 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">@task.Task</h5>
-                        <p class="card-text">Category: @task.Category.CategoryName</p>
-                        <p class="card-text">Due Date: @task.DueDate</p>
+                        @if (task.Category != null)
+                        {
+                            <p class="card-text">Category: @task.Category.CategoryName</p>
+                        }
+                        @if (task.DueDate != null)
+                        {
+                            <p class="card-text">Due Date: @task.DueDate?.ToShortDateString()</p>
+
+                        }
                         <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@task.TaskID" class="btn btn-primary">Edit</a>
-                        <form asp-action="Delete" asp-controller="Home" asp-route-taskid="@task.TaskID" class="d-inline">
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
+                        <a asp-action="Delete" asp-controller="Home" asp-route-taskid="@task.TaskID" class="btn btn-danger">Delete</a>
                         <form asp-action="MarkComplete" asp-controller="Home" asp-route-taskid="@task.TaskID" class="d-inline">
-                            @*<button type="submit" class="btn btn-success">Mark Complete</button>*@
+                            <button type="submit" class="btn btn-success">Mark Complete</button>
                         </form>
                     </div>
                 </div>
             }
         }
     </div>
+</div>
 
-
+@*Row 2 with Q3 and Q4 tasks*@
+<div class="row">
     <div class="col-sm-3">
-        <h3>Quadrant III: Not Important / Urgent</h3>
+        <h2>Not Important</h2>
+    </div>
+    <div class="col-sm-3">
+        <h3>Quadrant III: </h3>
+        <h5>Not Important / Urgent</h5>
         <hr />
         @foreach (var task in Model)
         {
@@ -68,14 +102,19 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">@task.Task</h5>
-                        <p class="card-text">Category: @task.Category.CategoryName</p>
-                        <p class="card-text">Due Date: @task.DueDate</p>
+                        @if (task.Category != null)
+                        {
+                            <p class="card-text">Category: @task.Category.CategoryName</p>
+                        }
+                        @if (task.DueDate != null)
+                        {
+                            <p class="card-text">Due Date: @task.DueDate?.ToShortDateString()</p>
+
+                        }
                         <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@task.TaskID" class="btn btn-primary">Edit</a>
-                        <form asp-action="Delete" asp-controller="Home" asp-route-taskid="@task.TaskID" class="d-inline">
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
+                        <a asp-action="Delete" asp-controller="Home" asp-route-taskid="@task.TaskID" class="btn btn-danger">Delete</a>
                         <form asp-action="MarkComplete" asp-controller="Home" asp-route-taskid="@task.TaskID" class="d-inline">
-                            @*<button type="submit" class="btn btn-success">Mark Complete</button>*@
+                            <button type="submit" class="btn btn-success">Mark Complete</button>
                         </form>
                     </div>
                 </div>
@@ -83,7 +122,8 @@
         }
     </div>
     <div class="col-sm-3">
-        <h3>Quadrant IIII: Not Important / Not Urgent</h3>
+        <h3>Quadrant IV: </h3>
+        <h5>Not Important / Not Urgent</h5>
         <hr />
         @foreach (var task in Model)
         {
@@ -92,14 +132,18 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">@task.Task</h5>
-                        <p class="card-text">Category: @task.Category.CategoryName</p>
-                        <p class="card-text">Due Date: @task.DueDate</p>
+                        @if (task.Category != null)
+                        {
+                            <p class="card-text">Category: @task.Category.CategoryName</p>
+                        }
+                        @if (task.DueDate != null)
+                        {
+                            <p class="card-text">Due Date: @task.DueDate?.ToShortDateString()</p>
+                        }
                         <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@task.TaskID" class="btn btn-primary">Edit</a>
-                        <form asp-action="Delete" asp-controller="Home" asp-route-taskid="@task.TaskID" class="d-inline">
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
+                        <a asp-action="Delete" asp-controller="Home" asp-route-taskid="@task.TaskID" class="btn btn-danger">Delete</a>
                         <form asp-action="MarkComplete" asp-controller="Home" asp-route-taskid="@task.TaskID" class="d-inline">
-                            @*<button type="submit" class="btn btn-success">Mark Complete</button>*@
+                            <button type="submit" class="btn btn-success">Mark Complete</button>
                         </form>
                     </div>
                 </div>

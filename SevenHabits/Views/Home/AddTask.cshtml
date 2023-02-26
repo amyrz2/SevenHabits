@@ -2,10 +2,22 @@
     ViewData["Title"] = "Add Task";
 }
 
+<!--import model-->
+
 @model SevenHabits.Models.TaskForm
+
+<!--Title of page-->
 
 <h1>@ViewData["Title"]</h1>
 <br />
+
+<!--Image of quadrants with examples-->
+<div class="text-center">
+    <img src="~/img/matrix.jpg" height="400" />
+</div>
+
+
+<!--Form to add task-->
 <form method="post">
 
     <!--output any errors-->
@@ -41,11 +53,13 @@
     <label>Completed</label>
     <select id="Completed" asp-for="Completed">
         <option value=true>Yes</option>
-        <option value=false>No</option>
+        <option value=false selected>No</option>
     </select>
     <br />
 
-    <button type="submit">Submit Application</button>
+
+    <!--Submit button-->
+    <button type="submit" class="btn btn-primary">Submit Task</button>
     <br /><br /><br />
 
 </form>

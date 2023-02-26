@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using SevenHabits.Models;
 using SevenHabits.Controllers;
 using Microsoft.EntityFrameworkCore;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SevenHabits.Controllers
 {
@@ -27,11 +28,13 @@ namespace SevenHabits.Controllers
         //    _logger = logger;
         //}
 
+        // Display Index Page
         public IActionResult Index()
         {
             return View();
         }
 
+        // View All Tasks in Quadrants Page
         public IActionResult Quadrants()
         {
             var applications = blahContext.habits
@@ -41,11 +44,10 @@ namespace SevenHabits.Controllers
             return View(applications);
         }
 
-
+        // Add Tasks
         [HttpGet]
         public IActionResult AddTask()
         {
-
             ViewBag.Categories = blahContext.Categories.ToList();
 
             return View();
@@ -54,6 +56,7 @@ namespace SevenHabits.Controllers
         [HttpPost]
         public IActionResult AddTask(TaskForm ar)
         {
+            // if model is valid, save task
             if (ModelState.IsValid)
             {
                 blahContext.Add(ar);
@@ -61,7 +64,7 @@ namespace SevenHabits.Controllers
                 return View("Confirmation", ar);
             }
 
-            else //If Invalid
+            else 
             {
                 ViewBag.Categories = blahContext.Categories.ToList();
                 return View();
@@ -69,11 +72,11 @@ namespace SevenHabits.Controllers
 
         }
 
+        // Edit Task
         [HttpGet]
         public IActionResult Edit(int taskid)
         {
             ViewBag.Categories = blahContext.Categories.ToList();
-
             var application = blahContext.habits.Single(x => x.TaskID == taskid);
 
             return View("AddTask", application);
@@ -87,23 +90,19 @@ namespace SevenHabits.Controllers
             return RedirectToAction("Quadrants");
         }
 
-
-        public IActionResult Privacy()
+        // Automatically mark task as complete
+        public IActionResult MarkComplete(int taskid)
         {
-            return View();
+            var application = blahContext.habits.Single(x => x.TaskID == taskid);
+            application.Completed = true;
+            blahContext.SaveChanges();
+            return RedirectToAction("Quadrants");
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-
-
+        // Delete task all together
         [HttpGet]
         public IActionResult Delete(int taskid)
         {
-
             var application = blahContext.habits.Single(x => x.TaskID == taskid);
 
             return View(application);
@@ -114,7 +113,19 @@ namespace SevenHabits.Controllers
         {
             blahContext.habits.Remove(ar);
             blahContext.SaveChanges();
-            return RedirectToAction("Delete");
+            return RedirectToAction("Quadrants");
+        }
+
+        // Privacy page
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
     }

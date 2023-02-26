@@ -15,19 +15,19 @@ namespace SevenHabits.Models
         [Required]
         public int TaskID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter Task")]
         public string Task { get; set; }
 
-        public DateTime DueDate { get; set; }
+        public DateTime? DueDate { get; set; }
 
+        [Required(ErrorMessage = "Please enter a Quadrant")]
         public int Quadrant { get; set; }
 
         public bool Completed { get; set; }
 
         //Build Foreign key relationship
-        public int CategoryID { get; set; }
-
-        public Category? Category { get; set; }
+        public int? CategoryID { get; set; }
+        public Category Category { get; set; }
 
     }
 }

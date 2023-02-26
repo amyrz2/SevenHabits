@@ -58,13 +58,13 @@ namespace SevenHabits.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CategoryID")
+                    b.Property<int?>("CategoryID")
                         .HasColumnType("INTEGER");
 
                     b.Property<bool>("Completed")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("DueDate")
+                    b.Property<DateTime?>("DueDate")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Quadrant")
@@ -85,9 +85,7 @@ namespace SevenHabits.Migrations
                 {
                     b.HasOne("SevenHabits.Models.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryID");
                 });
 #pragma warning restore 612, 618
         }

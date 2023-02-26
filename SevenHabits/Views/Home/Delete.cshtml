@@ -7,13 +7,15 @@
 
 @model TaskForm
 
+@*confirm if we should delete*@
 <h2 class="text-center">Confirm Deletion</h2>
 <h3 class="text-center">Are you sure you want to delete the record for @Model.Task?</h3>
 
+@*Confirm deletion or cancel request*@
 <div class="text-center">
     <form method="post" asp-controller="Home" asp-action="Delete">
-        <button type="submit">Delete</button>
-        <a asp-controller="Home" asp-action="ViewList" class="btn btn-primary">Cancel</a>
+        <button type="submit" class="btn btn-danger">Delete</button>
         <input type="hidden" asp-for="TaskID" />
+        <a asp-controller="Home" asp-action="Quadrants" class="btn btn-primary">Cancel</a>
     </form>
 </div>

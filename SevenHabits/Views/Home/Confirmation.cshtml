@@ -5,11 +5,14 @@
     ViewData["Title"] = "Confirmation Page";
 }
 
+@*import model*@
 @model SevenHabits.Models.TaskForm
 
-<h1 class="text-center"> Thanks for submitting your tasks! in Quadrant @Model.Quadrant</h1>
+<h1 class="text-center"> Thanks for submitting your tasks @Model.Task</h1>
 
+@*buttons to redirect to other pages*@
 <div class="text-center">
-    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Home</a>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Home</a>
+    <a asp-controller="Home" asp-action="AddTask" class="btn btn-primary">Add Another Task</a>
     <a asp-controller="Home" asp-action="Quadrants" class="btn btn-primary">View All Tasks</a>
 </div>

@@ -9,7 +9,7 @@ using SevenHabits.Models;
 namespace SevenHabits.Migrations
 {
     [DbContext(typeof(ContextClass))]
-    [Migration("20230226000941_Initial")]
+    [Migration("20230226013316_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,13 +60,13 @@ namespace SevenHabits.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CategoryID")
+                    b.Property<int?>("CategoryID")
                         .HasColumnType("INTEGER");
 
                     b.Property<bool>("Completed")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("DueDate")
+                    b.Property<DateTime?>("DueDate")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Quadrant")
@@ -87,9 +87,7 @@ namespace SevenHabits.Migrations
                 {
                     b.HasOne("SevenHabits.Models.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryID");
                 });
 #pragma warning restore 612, 618
         }

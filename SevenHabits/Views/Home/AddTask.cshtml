@@ -8,14 +8,17 @@
 <br />
 <form method="post">
 
+    <!--output any errors-->
     <div asp-validation-summary="All"></div>
 
     <label>Task</label>
     <input type="text" id="Task" asp-for="Task" />
     <br />
+
     <label>Due Date</label>
     <input type="date" id="DueDate" asp-for="DueDate" />
     <br />
+
     <label>Quadrant</label>
     <select id="Quadrant" asp-for="Quadrant">
         <option value=1>1</option>
@@ -24,19 +27,26 @@
         <option value=4>4</option>
     </select>
     <br />
+
     <label>Category: </label>
     <select asp-for="CategoryID">
         <option value="">--Select a Category--</option>
-        @foreach (Category c in ViewBag.Cats)
+        @foreach (Category c in ViewBag.Categories)
         {
             <option value=@c.CategoryID>@c.CategoryName</option>
         }
     </select>
     <br />
+
     <label>Completed</label>
     <select id="Completed" asp-for="Completed">
         <option value=true>Yes</option>
         <option value=false>No</option>
     </select>
+    <br />
+
+    <button type="submit">Submit Application</button>
+    <br /><br /><br />
+
 </form>
 

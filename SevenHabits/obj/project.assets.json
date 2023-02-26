@@ -1374,26 +1374,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\derek\\.nuget\\packages\\": {}
+    "/Users/amyzhang/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\derek\\source\\repos\\SevenHabits\\SevenHabits\\SevenHabits.csproj",
+      "projectUniqueName": "/Users/amyzhang/Desktop/Bob/SevenHabits/SevenHabits.csproj",
       "projectName": "SevenHabits",
-      "projectPath": "C:\\Users\\derek\\source\\repos\\SevenHabits\\SevenHabits\\SevenHabits.csproj",
-      "packagesPath": "C:\\Users\\derek\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\derek\\source\\repos\\SevenHabits\\SevenHabits\\obj\\",
+      "projectPath": "/Users/amyzhang/Desktop/Bob/SevenHabits/SevenHabits.csproj",
+      "packagesPath": "/Users/amyzhang/.nuget/packages/",
+      "outputPath": "/Users/amyzhang/Desktop/Bob/SevenHabits/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\derek\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/amyzhang/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1452,7 +1450,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.405/RuntimeIdentifierGraph.json"
       }
     }
   }

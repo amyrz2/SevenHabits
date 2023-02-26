@@ -20,10 +20,9 @@ namespace SevenHabits.Models
 
         public DateTime DueDate { get; set; }
 
-        public string Quadrant { get; set; }
+        public int Quadrant { get; set; }
 
         public bool Completed { get; set; }
-
 
         //Build Foreign key relationship
         public int CategoryID { get; set; }

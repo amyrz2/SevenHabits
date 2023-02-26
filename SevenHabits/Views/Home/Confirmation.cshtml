@@ -1,0 +1,15 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Confirmation Page";
+}
+
+@model SevenHabits.Models.TaskForm
+
+<h1 class="text-center"> Thanks for submitting your tasks! in Quadrant @Model.Quadrant</h1>
+
+<div class="text-center">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Home</a>
+    <a asp-controller="Home" asp-action="Quadrants" class="btn btn-primary">View All Tasks</a>
+</div>

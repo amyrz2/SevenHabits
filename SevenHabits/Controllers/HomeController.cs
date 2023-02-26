@@ -32,7 +32,7 @@ namespace SevenHabits.Controllers
             return View();
         }
 
-        public IActionResult ViewTasks()
+        public IActionResult Quadrants()
         {
             var applications = blahContext.habits
             .Include(x => x.Category)
@@ -45,16 +45,48 @@ namespace SevenHabits.Controllers
         [HttpGet]
         public IActionResult AddTask()
         {
-            ViewBag.Cats = blahContext.Categories.ToList();
+
+            ViewBag.Categories = blahContext.Categories.ToList();
 
             return View();
         }
 
         [HttpPost]
-        public IActionResult AddTask(ApplicationException ar)
+        public IActionResult AddTask(TaskForm ar)
         {
-            return View("Confirmation", ar);
+            if (ModelState.IsValid)
+            {
+                blahContext.Add(ar);
+                blahContext.SaveChanges();
+                return View("Confirmation", ar);
+            }
+
+            else //If Invalid
+            {
+                ViewBag.Categories = blahContext.Categories.ToList();
+                return View();
+            }
+
         }
+
+        [HttpGet]
+        public IActionResult Edit(int taskid)
+        {
+            ViewBag.Categories = blahContext.Categories.ToList();
+
+            var application = blahContext.habits.Single(x => x.TaskID == taskid);
+
+            return View("AddTask", application);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(TaskForm blah)
+        {
+            blahContext.Update(blah);
+            blahContext.SaveChanges();
+            return RedirectToAction("Quadrants");
+        }
+
 
         public IActionResult Privacy()
         {
@@ -66,6 +98,25 @@ namespace SevenHabits.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        [HttpGet]
+        public IActionResult Delete(int taskid)
+        {
+
+            var application = blahContext.habits.Single(x => x.TaskID == taskid);
+
+            return View(application);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(TaskForm ar)
+        {
+            blahContext.habits.Remove(ar);
+            blahContext.SaveChanges();
+            return RedirectToAction("Delete");
+        }
+
     }
 }
 
